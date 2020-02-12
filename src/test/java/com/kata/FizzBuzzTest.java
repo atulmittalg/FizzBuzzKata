@@ -11,5 +11,10 @@ public class FizzBuzzTest {
         FizzBuzz fizzBuz = new FizzBuzz();
         Assert.assertEquals(1,fizzBuz.translate(1));
     }
+    @Test
+    public void shouldTranslate2To2(){
+        FizzBuzz fizzBuz = new FizzBuzz();
+        Assert.assertEquals(2,fizzBuz.translate(2));
+    }
 
 }
