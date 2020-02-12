@@ -2,6 +2,7 @@ package test.java.com.kata;
 
 import main.java.com.kata.FizzBuzz;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -14,10 +15,16 @@ public class FizzBuzzTest {
 
     private int numberToTranslate;
     private int translatedNumber;
+    private FizzBuzz fizzBuz = new FizzBuzz();
 
     public FizzBuzzTest(int numberToTranslate, int translatedNumber){
         this.numberToTranslate = numberToTranslate;
         this.translatedNumber = translatedNumber;
+    }
+
+    @Before
+    public void initialize(){
+        FizzBuzz fizzBuz = new FizzBuzz();
     }
 
     @Parameterized.Parameters
@@ -27,13 +34,11 @@ public class FizzBuzzTest {
 
     @Test
     public void shouldTranslateGivenNumToTheSameNum(){
-        FizzBuzz fizzBuz = new FizzBuzz();
         Assert.assertEquals(numberToTranslate,fizzBuz.translate(translatedNumber));
     }
 
     @Test
     public void shouldTranslate3ToFizz(){
-        FizzBuzz fizzBuz = new FizzBuzz();
         Assert.assertEquals("Fizz",fizzBuz.translate(3));
     }
 
