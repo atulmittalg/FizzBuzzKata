@@ -14,10 +14,10 @@ import java.util.Collection;
 public class FizzBuzzTest {
 
     private int numberToTranslate;
-    private int translatedNumber;
+    private Object translatedNumber;
     private FizzBuzz fizzBuz = new FizzBuzz();
 
-    public FizzBuzzTest(int numberToTranslate, int translatedNumber){
+    public FizzBuzzTest(int numberToTranslate, Object translatedNumber){
         this.numberToTranslate = numberToTranslate;
         this.translatedNumber = translatedNumber;
     }
@@ -29,36 +29,11 @@ public class FizzBuzzTest {
 
     @Parameterized.Parameters
     public static Collection inputParameters(){
-        return Arrays.asList(new Object[][]{{1, 1},{2, 2}});
+        return Arrays.asList(new Object[][]{{1, 1},{2, 2},{3,"Fizz"},{5,"Buzz"},{6,"Fizz"},{10,"Buzz"},{15,"FizzBuzz"},{30,"FizzBuzz"}});
     }
 
     @Test
-    public void shouldTranslateGivenNumToTheSameNum(){
-        Assert.assertEquals(numberToTranslate,fizzBuz.translate(translatedNumber));
+    public void shouldTranslateGivenNumAsExpected(){
+        Assert.assertEquals(translatedNumber, fizzBuz.translate(numberToTranslate));
     }
-
-    @Test
-    public void shouldTranslate3ToFizz(){
-        Assert.assertEquals("Fizz",fizzBuz.translate(3));
-    }
-
-    @Test
-    public void shouldTranslate5ToBuzz(){ Assert.assertEquals("Buzz",fizzBuz.translate(5));
-    }
-
-    @Test
-    public void shouldTranslate6ToFizz(){
-        Assert.assertEquals("Fizz",fizzBuz.translate(6));
-    }
-
-    @Test
-    public void shouldTranslate10ToBuzz(){
-        Assert.assertEquals("Buzz",fizzBuz.translate(10));
-    }
-
-    @Test
-    public void shouldTranslate15ToFizzBuzz(){
-        Assert.assertEquals("FizzBuzz",fizzBuz.translate(15));
-    }
-
 }
