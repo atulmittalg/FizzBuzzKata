@@ -43,13 +43,17 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void shouldTranslate5ToBuzz(){
-        Assert.assertEquals("Buzz",fizzBuz.translate(5));
+    public void shouldTranslate5ToBuzz(){ Assert.assertEquals("Buzz",fizzBuz.translate(5));
     }
 
     @Test
     public void shouldTranslate6ToFizz(){
         Assert.assertEquals("Fizz",fizzBuz.translate(6));
+    }
+
+    @Test
+    public void shouldTranslate10ToBuzz(){
+        Assert.assertEquals("Buzz",fizzBuz.translate(10));
     }
 
 }
