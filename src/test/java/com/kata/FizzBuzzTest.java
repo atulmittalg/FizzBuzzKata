@@ -3,18 +3,32 @@ package test.java.com.kata;
 import main.java.com.kata.FizzBuzz;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+@RunWith(Parameterized.class)
 public class FizzBuzzTest {
 
-    @Test
-    public void shouldTranslate1To1(){
-        FizzBuzz fizzBuz = new FizzBuzz();
-        Assert.assertEquals(1,fizzBuz.translate(1));
+    private int numberToTranslate;
+    private int translatedNumber;
+
+    public FizzBuzzTest(int numberToTranslate, int translatedNumber){
+        this.numberToTranslate = numberToTranslate;
+        this.translatedNumber = translatedNumber;
     }
+
+    @Parameterized.Parameters
+    public static Collection inputParameters(){
+        return Arrays.asList(new Object[][]{{1, 1},{2, 2}});
+    }
+
     @Test
-    public void shouldTranslate2To2(){
+    public void shouldTranslateGivenNumToTheSameNum(){
         FizzBuzz fizzBuz = new FizzBuzz();
-        Assert.assertEquals(2,fizzBuz.translate(2));
+        Assert.assertEquals(numberToTranslate,fizzBuz.translate(translatedNumber));
     }
 
 }
