@@ -42,4 +42,9 @@ public class FizzBuzzTest {
         Assert.assertEquals("Fizz",fizzBuz.translate(3));
     }
 
+    @Test
+    public void shouldTranslate5ToBuzz(){
+        Assert.assertEquals("Buzz",fizzBuz.translate(5));
+    }
+
 }
