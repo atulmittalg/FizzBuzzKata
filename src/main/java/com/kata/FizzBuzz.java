@@ -1,7 +1,10 @@
 package main.java.com.kata;
 
 public class FizzBuzz {
-    public int translate(int numberToTranslate) {
+    public Object translate(int numberToTranslate) {
+        if(numberToTranslate % 3 == 0){
+            return "Fizz";
+        }
         return numberToTranslate;
     }
 }

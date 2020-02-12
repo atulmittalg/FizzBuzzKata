@@ -31,4 +31,10 @@ public class FizzBuzzTest {
         Assert.assertEquals(numberToTranslate,fizzBuz.translate(translatedNumber));
     }
 
+    @Test
+    public void shouldTranslate3ToFizz(){
+        FizzBuzz fizzBuz = new FizzBuzz();
+        Assert.assertEquals("Fizz",fizzBuz.translate(3));
+    }
+
 }
